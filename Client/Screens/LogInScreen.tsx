@@ -34,15 +34,16 @@ export default function LogInScreen({ navigation }: Props) {
         style={{ ...styles.textInput, marginBottom: 40 }}
         mode="outlined"
         label="Användarnamn"
-        placeholder="E-post"
+        placeholder="Användarnamn"
         right={<TextInput.Affix text="/50" />}
         onChangeText={onUserNameChanged}
       />
       <TextInput
         style={{ ...styles.textInput }}
         mode="outlined"
-        label="Ange ditt lösen ord"
-        placeholder="Minst 8 tecken"
+        label="Lösenord"
+        placeholder="Lösenord"
+        secureTextEntry={true}
         right={<TextInput.Affix text="/15" />}
         onChangeText={onPasswordChanged}
       />

@@ -13,7 +13,7 @@ export function CustomNavigationBar({ options }: NativeStackHeaderProps) {
       statusBarHeight={25}
       style={styles.appbarHeader}
     >
-      <Appbar.Content titleStyle={styles.appbarHeader} title={options.title} />
+      <Appbar.Content titleStyle={styles.appbarHeader} title={"Never Alone"} />
       <Appbar.Action icon="logout" onPress={() => dispatch(logout())} />
     </Appbar.Header>
   );

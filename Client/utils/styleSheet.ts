@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#F3EEF6",
-    marginTop: 10
+    marginTop: 10,
   },
 
   containertwo: {
@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
   Todocontainer: {
     flex: 1,
     backgroundColor: "#eee",
-    marginTop: 10
+    marginTop: 10,
   },
 
   todo: {
@@ -161,9 +161,8 @@ export const styles = StyleSheet.create({
   },
 
   citat: {
-    fontSize: 15,
+    fontSize: 20,
     textAlign: "center",
-    paddingBottom: 10,
     color: "#404040",
   },
 
@@ -206,7 +205,7 @@ export const styles = StyleSheet.create({
     width: "100%",
     height: 180,
     marginBottom: 10,
-    borderRadius: 20,
+    borderRadius: 5,
   },
 
   //appbar

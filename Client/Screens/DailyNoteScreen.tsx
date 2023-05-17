@@ -67,7 +67,7 @@ export default function DailyNotes({ navigation, route }: Props) {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={{ width: "95%", marginBottom: 35 }}>
+      <ScrollView style={{ width: "95%", marginBottom: 55 }}>
         <Text style={styles.title}>Dagbok</Text>
         <SelectedImage
           stylescontainer={styles.container}
@@ -97,18 +97,17 @@ export default function DailyNotes({ navigation, route }: Props) {
           />
           <Button onPress={onPress} title="Spara" color="#c48a9f"></Button>
         </View>
-
-        {dailyNote?.map((note) => {
-          return (
-            <Text key={note.id}>
+        <View style={{ display: "flex", alignItems: "center", marginTop: 20 }}>
+          {dailyNote?.map((note) => {
+            return (
               <NoteCard
                 dailyNote={note}
                 onDelete={handleDeleteNote}
                 child={"ta bort"}
               ></NoteCard>
-            </Text>
-          );
-        })}
+            );
+          })}
+        </View>
       </ScrollView>
       <BottomBar navigation={navigation} route={route}></BottomBar>
     </View>
