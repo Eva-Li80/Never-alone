@@ -7,8 +7,6 @@ const getPersistedAuthValues = async () => {
     token: "",
     user: null,
     expiration: "",
-    errormessage: "",
-    registeraccepted: false,
   };
   const token = await get("user.token");
   const expiration = await get("user.expiration");
@@ -18,8 +16,6 @@ const getPersistedAuthValues = async () => {
       token,
       expiration,
       user: JSON.parse(user),
-      errormessage: null,
-      registeraccepted: false,
     };
   }
 
