@@ -19,13 +19,14 @@ export const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "space-between",
     padding: 40,
+    backgroundColor: "#F3EEF6",
   },
 
   //Todo
 
   Todocontainer: {
     flex: 1,
-    backgroundColor: "#eee",
+    backgroundColor: "#F3EEF6",
     marginTop: 10,
   },
 

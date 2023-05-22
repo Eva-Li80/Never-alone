@@ -18,6 +18,7 @@ type Props = NativeStackScreenProps<RootStackParamList, "MoodTracker">;
 
 export default function MoodTrackerScreen({ navigation, route }: Props) {
   const [weeklyData, setWeeklyData] = React.useState<number[] | null>();
+  const [montlyData, setMontlyData] = React.useState<number[] | null>();
   const [visible, setVisible] = React.useState(false);
   const [message, setMessage] = React.useState("");
 
@@ -38,7 +39,12 @@ export default function MoodTrackerScreen({ navigation, route }: Props) {
 
   React.useEffect(() => {
     if (currentMoodData) {
-      setWeeklyData(sortData(currentMoodData));
+      setWeeklyData(getWeeklyData(currentMoodData));
+    }
+  }, [currentMoodData]);
+  React.useEffect(() => {
+    if (currentMoodData) {
+      setMontlyData(getMonthlyData(currentMoodData));
     }
   }, [currentMoodData]);
 
@@ -56,14 +62,24 @@ export default function MoodTrackerScreen({ navigation, route }: Props) {
         <Text style={styles.title}>Hur mår du idag?</Text>
         <View style={styles.moodcontent}>
           {icons.map((element, key) => (
-            <Button key={key} style={styles.moodbutton} onPress={() => onPress(element)}>
+            <Button
+              key={key}
+              style={styles.moodbutton}
+              onPress={() => onPress(element)}
+            >
               {element}
             </Button>
           ))}
         </View>
-        <Text style={styles.title}>Statistik</Text>
+        <Text style={styles.title}>Senaste veckan</Text>
         {weeklyData ? (
           <MoodTracker label={icons} dataset={weeklyData}></MoodTracker>
+        ) : (
+          <Text>Finns ingen data att visa</Text>
+        )}
+        <Text style={styles.title}>Senaste månaden</Text>
+        {montlyData ? (
+          <MoodTracker label={icons} dataset={montlyData}></MoodTracker>
         ) : (
           <Text>Finns ingen data att visa</Text>
         )}
@@ -84,4 +100,3 @@ export default function MoodTrackerScreen({ navigation, route }: Props) {
     </View>
   );
 }
-

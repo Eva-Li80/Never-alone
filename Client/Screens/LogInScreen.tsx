@@ -86,6 +86,7 @@ export default function LogInScreen({ navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
+    backgroundColor: "#F3EEF6",
   },
   loggaIn: {
     fontSize: 30,
