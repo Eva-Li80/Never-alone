@@ -5,5 +5,5 @@ namespace NeverAlone.Models.RequestModels;
 public class MoodCreate
 {
     [Required]
-    public string Icon { get; set; }
+    public int value { get; set; }
 }

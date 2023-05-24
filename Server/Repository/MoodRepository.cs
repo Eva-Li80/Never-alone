@@ -16,14 +16,14 @@ public class MoodRepository : IMoodRepository
         _context = context;
 
     }
-    public async Task<MoodDTO> CreateMood(string id, string icon)
+    public async Task<MoodDTO> CreateMood(string id, int value)
     {
-        Mood mood = new Mood { id = Guid.NewGuid().ToString(), userId = id, icon = icon, date = DateTime.Now };
+        Mood mood = new Mood { id = Guid.NewGuid().ToString(), userId = id, value = value, date = DateTime.Now };
 
         _context.Mood.Add(mood);
         await _context.SaveChangesAsync();
 
-        MoodDTO moodDTO = new MoodDTO { icon = mood.icon, date = mood.date.ToString("yyyy-MM-dd") };
+        MoodDTO moodDTO = new MoodDTO { value = mood.value, date = mood.date.ToString("yyyy-MM-dd") };
 
         return moodDTO;
     }
@@ -31,7 +31,7 @@ public class MoodRepository : IMoodRepository
     public async Task<IEnumerable<MoodDTO>> GetAllMoods(string id)
     {
         var moods = await _context.Mood.Where(m => m.userId == id).ToListAsync();
-        var returnItems = new List<MoodDTO>(moods.Select(m => new MoodDTO { icon = m.icon, date = m.date.ToString("yyyy-MM-dd") }).ToList());
+        var returnItems = new List<MoodDTO>(moods.Select(m => new MoodDTO { value = m.value, date = m.date.ToString("yyyy-MM-dd") }).ToList());
         return returnItems;
     }
 }

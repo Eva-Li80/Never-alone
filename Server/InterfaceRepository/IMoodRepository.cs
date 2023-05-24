@@ -4,7 +4,7 @@ namespace NeverAlone.InterfaceRepository
 {
     public interface IMoodRepository
     {
-        public Task<MoodDTO> CreateMood(string id, string icon);
+        public Task<MoodDTO> CreateMood(string id, int value);
         public Task<IEnumerable<MoodDTO>> GetAllMoods(string id);
     }
 }

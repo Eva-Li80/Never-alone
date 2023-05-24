@@ -111,15 +111,12 @@ public class SeedingDataForTest
         if (!context.Mood.Any())
         {
             Mood[] moods = {
-                new Mood{id = "1", userId = "1", icon = "😢", date= new DateTime(2023-04-20)},
-                new Mood{id = "2", userId = "1", icon = "👎", date= new DateTime(2023-04-22)},
-                new Mood{id = "3", userId = "1", icon = "😢", date= new DateTime(2023-04-23)},
-                new Mood{id = "4", userId = "1", icon = "👌", date= new DateTime(2023-04-29)},
-                new Mood{id = "5", userId = "1", icon = "👌", date= new DateTime(2023-04-29)},
-                new Mood{id = "6", userId = "1", icon = "👌", date= new DateTime(2023-05-01)},
-                new Mood{id = "7", userId = "1", icon = "👍", date= new DateTime(2023-05-02)},
-                new Mood{id = "8", userId = "1", icon = "😊", date= new DateTime(2023-04-29)},
-                new Mood{id = "9", userId = "1", icon = "😊", date= new DateTime(2023-04-29)},
+                new Mood{id = "1", userId = "1", value = 1, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(16)},
+                new Mood{id = "2", userId = "1", value = 2, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(17)},
+                new Mood{id = "3", userId = "1", value = 3, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(18)},
+                new Mood{id = "4", userId = "1", value = 4, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(19)},
+                new Mood{id = "5", userId = "1", value = 5, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(20)},
+
 
             };
 

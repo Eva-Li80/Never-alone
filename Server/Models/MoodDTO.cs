@@ -4,7 +4,7 @@ namespace NeverAlone.Models;
 
 public class MoodDTO
 {
-    public string icon { get; set; }
+    public int value { get; set; }
     public string date { get; set; }
 
 }

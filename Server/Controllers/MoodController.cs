@@ -27,7 +27,7 @@ public class MoodController : ControllerBase
     public async Task<ActionResult<Mood>> CreateMood([FromBody] MoodCreate mood)
     {
         var user = await _userManager.FindByNameAsync(User.Identity.Name);
-        var result = await _repository.CreateMood(user.Id, mood.Icon);
+        var result = await _repository.CreateMood(user.Id, mood.value);
         if (result != null)
         {
             return Ok(result);
