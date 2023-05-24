@@ -31,7 +31,7 @@ public class MoodRepository : IMoodRepository
     public async Task<IEnumerable<MoodDTO>> GetAllMoods(string id)
     {
         var moods = await _context.Mood.Where(m => m.userId == id).ToListAsync();
-        var returnItems = new List<MoodDTO>(moods.Select(m => new MoodDTO { value = m.value, date = m.date.ToString("yyyy-MM-dd") }).ToList());
+        var returnItems = new List<MoodDTO>(moods.Select(m => new MoodDTO { value = m.value, date = m.date.ToString("yyyy-MM-dd") }).OrderBy(m => m.date).ToList());
         return returnItems;
     }
 }

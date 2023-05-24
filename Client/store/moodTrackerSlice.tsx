@@ -10,11 +10,11 @@ const initialState: MoodTrackerState = {
   data: null,
 };
 
-export const createMood = createAsyncThunk<Mood, { icon: string }>(
+export const createMood = createAsyncThunk<Mood, { value: number }>(
   "mood/create",
   async (data, { rejectWithValue }) => {
     try {
-      const respons = await createMoodRequest(data.icon);
+      const respons = await createMoodRequest(data.value);
       return respons;
     } catch (error) {
       return rejectWithValue("Failed to fetch");

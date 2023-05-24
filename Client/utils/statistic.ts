@@ -1,77 +1,27 @@
 import { Mood } from "./types";
 
-const today = new Date();
-const icons: string[] = ["😢", "👎", "👌", "👍", "😊"];
+export const getDateToString = (data: Mood[] | null) => {
+  const dateArray: string[] = [];
+  if (data != null) {
+    for (var item of data) {
+      const number = new Date(item.date).toDateString();
 
-export const getMonthlyData = (data: Mood[] | null) => {
-  if (data === null) return null;
-  const startDate = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate() - today.getDay() - 20
-  );
-
-  const endDate = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate() - today.getDay() + 1
-  );
-
-  const result = data?.filter((element) => {
-    if (
-      new Date(element.date).getDay() >= startDate.getDay() &&
-      new Date(element.date).getDay() <= endDate.getDay()
-    )
-      return true;
-    else {
-      return false;
+      dateArray.push(number.substring(3, 10));
     }
-  });
-  const results = sortData(result);
-  return results;
-};
-
-export const getWeeklyData = (data: Mood[] | null) => {
-  if (data === null) return null;
-  const startDate = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate() - today.getDay() - 7
-  );
-
-  const endDate = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate() - today.getDay() + 1
-  );
-
-  const result = data?.filter((element) => {
-    if (
-      new Date(element.date).getDay() >= startDate.getDay() &&
-      new Date(element.date).getDay() <= endDate.getDay()
-    )
-      return true;
-    else {
-      return false;
-    }
-  });
-  const results = sortData(result);
-  return results;
-};
-
-export function sortData(data: Mood[]) {
-  const numberArray: number[] = [];
-  for (var icon of icons) {
-    const number = data?.filter((element) => {
-      if (element.icon === icon) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-
-    numberArray.push(number.length);
   }
 
-  return numberArray;
-}
+  return dateArray.slice(-7);
+};
+
+export const getNumber = (data: Mood[] | null) => {
+  const dateArray: number[] = [];
+  if (data != null) {
+    for (var item of data) {
+      const number = item.value;
+
+      dateArray.push(number);
+    }
+  }
+
+  return dateArray.slice(-7);
+};

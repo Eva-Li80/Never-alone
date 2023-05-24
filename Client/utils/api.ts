@@ -100,7 +100,6 @@ export const registerRequest = async (
   throw response;
 };
 
-
 export const getDailyNoteRequest = async () => {
   const response = await fetch(`${url}/dailyNote/GetAll`, {
     method: "GET",
@@ -179,7 +178,7 @@ export const deleteDailyNoteRequest = async (id: string) => {
   throw response;
 };
 
-export const createMoodRequest = async (icon: string) => {
+export const createMoodRequest = async (value: number) => {
   const response = await fetch(`${url}/mood/Create`, {
     method: "POST",
     headers: {
@@ -187,7 +186,7 @@ export const createMoodRequest = async (icon: string) => {
       Authorization: `Bearer ${await get("user.token")}`,
     },
     body: JSON.stringify({
-      icon,
+      value,
     }),
   });
   if (response.ok) {

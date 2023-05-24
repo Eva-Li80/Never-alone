@@ -166,6 +166,13 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     color: "#404040",
   },
+  smallText: {
+    fontSize: 18,
+    padding: 5,
+    textAlign: "center",
+    color: "#404040",
+    margin: 10,
+  },
 
   // buttons
   buttonStandard: {

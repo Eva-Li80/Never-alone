@@ -38,6 +38,7 @@ export default function MoodTracker(props: props) {
           }}
           fromZero={true}
           bezier
+          segments={5}
           style={{
             marginVertical: 8,
             borderRadius: 16,
@@ -47,5 +48,3 @@ export default function MoodTracker(props: props) {
     </View>
   );
 }
-
-

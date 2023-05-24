@@ -111,11 +111,11 @@ public class SeedingDataForTest
         if (!context.Mood.Any())
         {
             Mood[] moods = {
-                new Mood{id = "1", userId = "1", value = 1, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(16)},
-                new Mood{id = "2", userId = "1", value = 2, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(17)},
-                new Mood{id = "3", userId = "1", value = 3, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(18)},
-                new Mood{id = "4", userId = "1", value = 4, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(19)},
-                new Mood{id = "5", userId = "1", value = 5, date= new DateTime().AddYears(2023).AddMonths(5).AddDays(20)},
+                new Mood{id = "1", userId = "1", value = 4, date= new DateTime().AddYears(2023).AddMonths(4).AddDays(21)},
+                new Mood{id = "2", userId = "1", value = 2, date= new DateTime().AddYears(2023).AddMonths(4).AddDays(22)},
+                new Mood{id = "3", userId = "1", value = 3, date= new DateTime().AddYears(2023).AddMonths(4).AddDays(23)},
+                new Mood{id = "4", userId = "1", value = 4, date= new DateTime().AddYears(2023).AddMonths(4).AddDays(19)},
+                new Mood{id = "5", userId = "1", value = 5, date= new DateTime().AddYears(2023).AddMonths(4).AddDays(20)},
 
 
             };
