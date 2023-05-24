@@ -5,7 +5,6 @@ import { View, Text, ScrollView, StyleSheet } from "react-native";
 import { RootStackParamList } from "../navigation/RootNavigator";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { AppState } from "../store/store";
-import { Mood } from "../utils/types";
 import { BottomBar } from "../Componets/BottomBar";
 import { styles } from "../utils/styleSheet";
 import MoodTracker from "../Componets/MoodTracker";
@@ -17,7 +16,6 @@ type Props = NativeStackScreenProps<RootStackParamList, "MoodTracker">;
 
 export default function MoodTrackerScreen({ navigation, route }: Props) {
   const [weeklyData, setWeeklyData] = React.useState<number[] | null>();
-  const [montlyData, setMontlyData] = React.useState<number[] | null>();
   const [testData, setTestData] = React.useState<string[] | null>();
   const [visible, setVisible] = React.useState(false);
   const [message, setMessage] = React.useState("");
