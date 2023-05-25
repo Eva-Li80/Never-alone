@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React  from "react";
+import React from "react";
 import EditProfileScreen from "../Screens/EditProfileScreen";
 import LogInScreen from "../Screens/LogInScreen";
 import RegisterScreen from "../Screens/RegisterScreen";
@@ -11,7 +11,6 @@ import ProfileScreen from "../Screens/ProfileScreen";
 import DailyNotes from "../Screens/DailyNoteScreen";
 import MeditationScreen from "../Screens/MeditationScreen";
 import PhonenumberScreen from "../Screens/PhonenumberScreen";
-import SettingsScreen from "../Screens/Settings";
 import TodoScreen from "../Screens/TodoScreen";
 import MoodTrackerScreen from "../Screens/MoodTrackerScreen";
 
@@ -24,7 +23,6 @@ export type RootStackParamList = {
   DailyNote: undefined;
   Meditation: undefined;
   PhoneNumber: undefined;
-  Settings: undefined;
   Todo: undefined;
   MoodTracker: undefined;
 };
@@ -78,18 +76,14 @@ export const RootNavigator = () => {
               component={PhonenumberScreen}
               options={{ title: "PhoneNumber" }}
             />
-            <Stack.Screen
-              name="Settings"
-              component={SettingsScreen}
-              options={{ title: "Settings" }}
-            />
+
             <Stack.Screen
               name="Todo"
               component={TodoScreen}
               options={{ title: "Todo" }}
-              />
+            />
 
-              <Stack.Screen
+            <Stack.Screen
               name="MoodTracker"
               component={MoodTrackerScreen}
               options={{ title: "MoodTracker" }}

@@ -36,7 +36,7 @@ type DailyNote = {
 };
 
 interface Mood {
-  icon: string;
+  value: number;
   date: string;
 }
 

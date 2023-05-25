@@ -39,7 +39,7 @@ export default function HomeScreen({ navigation, route }: Props) {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={{ width: "100%", marginBottom: 35 }}>
+      <ScrollView style={{ width: "100%", marginBottom: 55 }}>
         <Text style={styles.title}>Välkommen {profile?.name}</Text>
         <View style={{ display: "flex", alignItems: "center", marginTop: 20 }}>
           <ButtonStandard onPress={onPress} text="MoodTracker"></ButtonStandard>

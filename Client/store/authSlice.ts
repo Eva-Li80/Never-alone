@@ -7,16 +7,12 @@ export interface AuthState {
   user: User | null;
   token: string | null;
   expiration: string | null;
-  errormessage: string | null;
-  registeraccepted: boolean;
 }
 
 const initialState: AuthState = {
   user: null,
   token: null,
   expiration: null,
-  errormessage: null,
-  registeraccepted: false,
 };
 
 export const login = createAsyncThunk<
@@ -63,8 +59,6 @@ const authSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.expiration = action.payload.expiration;
-      state.errormessage = null;
-      state.registeraccepted = true;
     },
     logout: (state) => {
       state.user = null;
@@ -80,20 +74,13 @@ const authSlice = createSlice({
       state.token = respons.token;
       state.expiration = respons.expiration;
     });
-    builder.addCase(login.rejected, (state, action) => {
-      const respons = action.payload as Error;
-      state.errormessage = respons.error;
-    });
 
     builder.addCase(register.fulfilled, (state, action) => {
       const respons = action.payload as RegisterRespons;
-      state.registeraccepted = respons.accepted;
     });
 
     builder.addCase(register.rejected, (state, action) => {
       const respons = action.payload as Error;
-      state.errormessage = respons.error;
-      state.registeraccepted = false;
     });
   },
 });

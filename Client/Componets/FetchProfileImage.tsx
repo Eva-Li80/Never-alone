@@ -56,7 +56,7 @@ const FetchProfileImage = () => {
   };
 
   return (
-    <View style={{marginBottom: 50}}>
+    <View style={{ marginBottom: 50 }}>
       {selectedImageUrl ? (
         <TouchableOpacity onPress={() => setSelectedImageUrl(null)}>
           <Image

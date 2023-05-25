@@ -16,7 +16,7 @@ export default function OverviewCard({
   uri,
 }: prop) {
   return (
-    <View style={{ padding: 25 }}>
+    <View style={{ padding: 15 }}>
       <Card mode="elevated">
         <Card.Cover source={{ uri }} />
         <Card.Title title={title} />

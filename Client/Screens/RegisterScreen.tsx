@@ -2,7 +2,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { RootStackParamList } from "../navigation/RootNavigator";
-import { TextInput } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 import ButtonStandard from "../Componets/ButtonStandard";
 import { useAppDispatch } from "../store/store";
 import { register } from "../store/authSlice";
@@ -46,7 +46,7 @@ export default function RegisterScreen({ navigation }: Props) {
         style={{ ...styles.textInput, marginBottom: 40 }}
         mode="outlined"
         label="Email"
-        placeholder="E-post"
+        placeholder="Email"
         right={<TextInput.Affix text="/50" />}
         onChangeText={onEmailChanged}
       />
@@ -54,7 +54,7 @@ export default function RegisterScreen({ navigation }: Props) {
         style={{ ...styles.textInput }}
         mode="outlined"
         label="Lösenord"
-        placeholder="Minst 8 tecken"
+        placeholder="Lösenord"
         right={<TextInput.Affix text="/15" />}
         onChangeText={onPasswordChanged}
       />
@@ -64,6 +64,13 @@ export default function RegisterScreen({ navigation }: Props) {
           text={"Skapa konto"}
         ></ButtonStandard>
       </View>
+      <Button
+        buttonColor="#F3EEF6"
+        textColor="#404040"
+        onPress={() => navigation.navigate("Login")}
+      >
+        {"Tillbaka"}
+      </Button>
     </View>
   );
 }
@@ -71,6 +78,7 @@ export default function RegisterScreen({ navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
+    backgroundColor: "#F3EEF6",
   },
   loggaIn: {
     fontSize: 30,

@@ -14,38 +14,35 @@ export default function MoodTracker(props: props) {
     datasets: [
       {
         data: props.dataset,
-        strokeWidth: 2, // optional
+        strokeWidth: 2,
       },
     ],
   };
 
   return (
     <View style={styles.moodcontent}>
-      <View>
-        <LineChart
-          data={linedata}
-          width={Dimensions.get("window").width} // from react-native
-          height={220}
-          chartConfig={{
-            backgroundColor: "#F3EEF6",
-            backgroundGradientFrom: "#F3EEF6",
-            backgroundGradientTo: "#F3EEF6",
-            decimalPlaces: 0, // optional, defaults to 2dp
-            color: (opacity = 0) => `rgba(64, 64, 64, ${opacity})`,
-            style: {
-              borderRadius: 16,
-            },
-          }}
-          fromZero={true}
-          bezier
-          style={{
-            marginVertical: 8,
+      <LineChart
+        data={linedata}
+        width={Dimensions.get("window").width}
+        height={220}
+        chartConfig={{
+          backgroundColor: "#F3EEF6",
+          backgroundGradientFrom: "#F3EEF6",
+          backgroundGradientTo: "#F3EEF6",
+          decimalPlaces: 0,
+          color: (opacity = 0) => `rgba(64, 64, 64, ${opacity})`,
+          style: {
             borderRadius: 16,
-          }}
-        />
-      </View>
+          },
+        }}
+        fromZero={true}
+        bezier
+        segments={5}
+        style={{
+          marginVertical: 8,
+          borderRadius: 16,
+        }}
+      />
     </View>
   );
 }
-
-
